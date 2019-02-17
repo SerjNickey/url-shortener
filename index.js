@@ -8,8 +8,6 @@ const { MongoClient } = require('mongodb');
 const nanoid = require('nanoid');
 
 const databaseUrl = process.env.DATABASE;
-//const DATABASE = `mongodb://SerjNickey:Spartan117@ds056549.mlab.com:56549/url-shortener-117`;
-//const databaseUrl = DATABASE;
 
 const app = express();
 
@@ -82,7 +80,7 @@ app.get('/:short_id', (req, res) => {
   const { db } = req.app.locals;
   checkIfShortIdExists(db, shortId)
     .then(doc => {
-      if (doc === null) return res.send('Uh oh. We could not find a link at that URL');
+      if (doc === null) return res.send('We could not find a link at that URL');
 
       res.redirect(doc.original_url);
     })

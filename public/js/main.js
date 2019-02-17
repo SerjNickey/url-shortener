@@ -26,7 +26,7 @@ form.addEventListener('submit', e => {
     }
 
     result.insertAdjacentHTML('afterbegin', `
-      <div class="result">
+      <div class="result red white-text">
         <a target="_blank" class="short-url" rel="noopener" href="/${data.short_id}">
           ${location.origin}/${data.short_id}
         </a>
